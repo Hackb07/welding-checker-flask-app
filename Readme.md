@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 ```bash
 git clone https://github.com/Hackb07/welding-checker-flask-app.git
-cd yolo-flask-app
+cd welding-checker-flask-app
 ```
 
 ### 2️⃣ Download or Place YOLOv8 Model
