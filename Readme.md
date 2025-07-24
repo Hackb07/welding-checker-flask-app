@@ -1,4 +1,4 @@
-# 🧠 YOLOv8 Object Detection Web App with Image Upload & IP Camera Streaming
+# 🧠 YOLOv8 Welding-Quality Detection Web App with Image Upload & IP Camera Streaming
 
 This project demonstrates a complete integration of **YOLOv8** (Ultralytics) with a **Flask web interface**, allowing users to:
 - 📷 Upload images for object detection
