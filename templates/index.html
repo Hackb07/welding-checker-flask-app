@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YOLO Detection</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #f4f8fb;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #1E88E5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+        input[type="file"],
+        input[type="text"],
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background: #1E88E5;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        input[type="submit"]:hover {
+            background: #1565C0;
+        }
+        img {
+            width: 100%;
+            max-width: 700px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        li {
+            background: #e3f2fd;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>YOLO Object Detection</h1>
+    <div class="container">
+        <!-- Image Upload -->
+        <div class="card">
+            <form method="POST" enctype="multipart/form-data">
+                <h2>📷 Upload Image</h2>
+                <input type="file" name="image" required>
+                <input type="submit" value="Detect Objects">
+            </form>
+
+            {% if result_image %}
+            <img src="{{ url_for('static', filename=result_image.split('static/')[-1]) }}" alt="Detected Image">
+            <ul>
+                {% for box in boxes %}
+                    <li>Box: {{ box }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <!-- IP Camera -->
+        <div class="card">
+            <form method="POST">
+                <h2>🌐 Live IP Camera</h2>
+                <input type="text" name="ip_url" placeholder="Enter IP Camera URL (e.g. http://192.168.1.X:8080/video)" required>
+                <input type="submit" value="Start Live Detection">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
