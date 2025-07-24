@@ -49,7 +49,7 @@ pip install -r requirements.txt
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/yolo-flask-app.git
+git clone https://github.com/Hackb07/welding-checker-flask-app.git
 cd yolo-flask-app
 ```
 
